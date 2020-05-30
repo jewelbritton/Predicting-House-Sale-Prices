@@ -7,7 +7,7 @@ This project uses the [Ames housing data recently made available on kaggle](http
 ---
 
 ## Table of Contents
-* [Problem Statement & Goals](#problem-statement-&-goals)
+* [Problem Statement & Goals](#problem-statement--goals) 
 * Predicting Sale Price Based on Fixed Features
 * Understanding the Value of Changeable Features
 * Predicting Abnormal Sales
