@@ -44,12 +44,22 @@ The best model for predicting house sale prices based on fixed features was Elas
 
 Before taking the log of the sales price, the best performing model was LassoCV. The coefficients can tell the company how much more or less value a house will have based on the fixed characteristics of the home.
 
+**Increase Sale Price:**
+
 * Each increase by 1 sqft in Ground Floor Living Area will equate to an increase of $27,704 in sale price
 * A basement with the highest quality (Excellent) will equate to a $12,973 greater sale price
-* A home in North Ridge Heights or North Ridge will increase sale prices by about $10,000
+* A home in Northridge Heights or Northridge will increase sale prices by about $10,000
 * Each additional car that can fit in the garage will increase the sale price by $8,800
 
-*insert feature importance pic*
+<img src = 'visuals/fixed increase price.png'>
+
+**Decrease Sale Price**
+
+* A basement that is not function because it is too short lowers the sale price by \$3,500
+* A home in Edwards will be about $3,100 less, and a home in Mithel will be about $2,100 less
+* A very irregular land plot will also lower the sale price by about $2,000
+
+<img src = 'visuals/fixed decrease price.png'>
 
 ## Understanding the Value of Changeable Features
 
@@ -60,7 +70,7 @@ The residuals from the first model (training and testing) represent the variance
 **Conclusion**
 When testing different models to predict the residuals of the previous model based on easy to change aspects of the home, lasso performed the best. This model was done by using the changeable features of the homes from pre-2010 as training data and 2010 sales data as test data. This data was predicting residuals from the last model (log of y - y test). However, all models that were tested had extremely low scores. The most influential coefficients were Overall Condition and Overall Quality, but all of the coefficients were quite low, suggesting that they would not have a large impact on the sale price of the home. Even the greatest coefficient, .03, would suggest that that feature would increase the sales price by just 3%.
 
-*coefficients
+<img src = 'visuals/residuals coef.png'>
 
 I would not advise for the real estate company to use this model to predict housing prices due to the low scores and resulting coefficients. It would be best for the real estate company to judge sale price based on fixed features of the home, as shown in the model for part 1. The model in part 1 produced much more accurate predictions, and since the coefficients were much larger, those features had much stronger impact on the value of the home.
 
@@ -86,6 +96,21 @@ Through initial EDA and feature engineering, I found that there was a strong cla
 With the new data sample, a Logistic Regression model that was tuned with GridSearch CV resulted in a mean CV score of .638. While this model is not perfect at predicting abnormal sales, it is performing better than the baseline from the resampled data, which was 50/50. By resampling we also made more accurate predictions than the original data would have allowed, since the model would have almost always predicted a normal sale since that was where the majority class was. By undersampling the data, the model is now able to guess both categories more effectively. 
 
 It is more likely for a home to have an abnormal sale if it is not a Warranty Deed - Conventional Sale type, if it is in Northridge neighborhood, if it has not had a remodel done recently, and if it is not a new construction home being sold. This means that an abnormal sale is most likely to be influenced by the type of sale of the home and the location it is in. Since it would not be possible to know what type of sale a house would have before predicting if the sale is abnormal or not, the most accurate predictors would be the home's location, when it was remodeled, and when when the sale is taking place. 
+
+**Increase likelihood of an abnormal sale**
+
+* A home in Northridge or Clear Creek
+* The home is sold in December
+* The house is a split or multi-level layout
+<img src = 'visuals/abnormal positive.png'>
+
+**Decrease likelihood of an abnormal sale**
+
+* A Warenty Deed - Conventional or New Construction Sale Type
+* A recent remodel or addition
+* The house is sold in June
+* The home is unfinished 1 - 1.5 stories
+<img src = 'visuals/abnormal negative.png'>
 
 This model is perhaps not the most reliable, and further research should be done by the real estate company before spending lots of money on a property. However this does provide a good framework on what the company can look out for.
 
