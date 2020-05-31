@@ -21,15 +21,15 @@ The real estate company is eager to apply data analysis to housing sales prices,
 
 The goals of this analysis are:
 * **Use fixed features of the home to predict sale price** <br>
-  -looking only at aspects that cannot be easily modified (number of bedrooms, square feet, etc.) to understand which elements impact price the most <br>
-  -develop a model that can predict price based on fixed features <br>
-  -forecast how much a house's value will increase with various renovations <br>
+  - looking only at aspects that cannot be easily modified (number of bedrooms, square feet, etc.) to understand which elements impact price the most <br>
+  - develop a model that can predict price based on fixed features <br>
+  - forecast how much a house's value will increase with various renovations <br>
   
 * **Analyze changeable features of the home** <br>
-  -by looking only at the features that can easily be changed (overall quality, condition, finishes, etc.), see if better predictions on sale price can be made
+  - by looking only at the features that can easily be changed (overall quality, condition, finishes, etc.), see if better predictions on sale price can be made
   
 * **Predict abnormal sales** <br>
-  -create a model to predict if a home will have an abnormal sale. If this can be predicted, the real estate company will be able to foresee homes that may be sold for a cheaper price through short sales or foreclosures
+  - create a model to predict if a home will have an abnormal sale. If this can be predicted, the real estate company will be able to foresee homes that may be sold for a cheaper price through short sales or foreclosures
 
 ## Predicting Sale Price Based on Fixed Features
 
